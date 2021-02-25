@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trko_task2/app/modules/HomeScreen/controllers/project_screen_controller_controller.dart';
+import 'package:trko_task2/app/modules/HomeScreen/views/home_screen_view.dart';
 import 'package:trko_task2/app/widgets/UI%20responsiveness.dart';
 
 
@@ -51,7 +52,7 @@ Widget refreshProjectScreen(String message, String token,){
               color: MyCustomColors.blue(),
               padding: EdgeInsets.symmetric(vertical: scale_height(1.4)),
               onPressed: (){
-              Get.find<ProjectScreenController>().getProjects(token);
+              Get.offAll(()=> HomeScreen(), arguments: token);
               },
             child: Text('Refresh', style: TextStyle(fontSize: scale_height(16.0), color: Colors.white)),
           )
